@@ -27,7 +27,7 @@ router.get("/search", async(req, res) => {
         // מביא את החיפוש בתור ביטוי ולא צריך את כל הביטוי עצמו לחיפוש
         // i -> מבטל את כל מה שקשור ל CASE SENSITVE
         let searchReg = new RegExp(queryS, "i")
-        let data = await CameraModel.find({ company: searchReg })
+        let data = await CameraModel.find({ $or: [{ company: searchReg }, { info: searchReg }] })
             .limit(50)
         res.json(data);
     } catch (err) {
