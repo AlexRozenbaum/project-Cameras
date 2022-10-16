@@ -31,17 +31,17 @@ router.get("/search", async(req, res) => {
             .limit(50)
         res.json(data);
     } catch (err) {
-        console.log(data);
         res.status(500).json({ msg: "there error try again later", err })
     }
 })
 router.get("/categories/:catName", async(req, res) => {
+    let page = req.query.page || 1;
     try {
         // req.params.catName -> מכיל את הפראמס
         let catName = req.params.catName;
-        let data = await CameraModel.find({});
-        let temp_ar = data.filter(item => item.category_id == catName)
-        res.json(temp_ar);
+        let data = await CameraModel.find({}).where("category_id").equals(catName).limit(10).skip((page - 1) * 10);
+
+        res.json(data);
         // res.json({msg:"prods cats work",cat:req.params.catName})
     } catch (err) {
         res.status(500).json({ msg: "there error try again later", err })
