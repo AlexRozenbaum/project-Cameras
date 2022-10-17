@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poor+Story&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <title>CamerasApiDocumentation</title>
+</head>
+
+<body>
+    <div class="site-container">
+        <header class="text-center">
+            <h1>CAMERAS API DOCUMENTATION
+            </h1>
+        </header>
+
+
+        <main class="box2">
+            <h2 class="text-center">Routes</h2>
+            <p style="color: rgb(177, 177, 177)" class="text-center pb-3">All HTTP methods are supported. You can use http or https for your requests.</p>
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                <h2 class="text-center">
+
+                    Get product (s)
+
+                </h2>
+                <div class="text-start m-auto col-5">
+                    <div class="m-0">
+                        <li class="pt-2 form-inline">Get 10 products by page number:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras?p=1" target="_blank">/cameras?page=number</a><span> (GET)</span>
+                        </li>
+                        <li class="pt-2 form-inline">Get X products in each page:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras?pp=100" target="_blank">/cameras?perpage=number</a><span> (GET)</span>
+                        </li>
+                        <li class="pt-2 form-inline">Search products by name or info:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras?s=toy" target="_blank">/cameras?s=key-word</a><span> (GET)</span>
+                        </li>
+                        <li class="pt-2 form-inline">Sort products:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras?sort=name" target="_blank">/cameras?sort=sort-key</a><span> (GET)</span>
+                        </li>
+                        <li class="pt-2 form-inline">Reverse by sort key:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras?sort=name&r=yes" target="_blank">/cameras?r=yes</a><span> (GET)</span>
+                        </li>
+                        <li class="pt-2 form-inline">Price range:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras?min=10&max=10000" target="_blank">/cameras?min=number&max=number</a><span> (GET)</span>
+                        </li>
+                        <li class="pt-2 form-inline">Get all products by category:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras/category/cars" target="_blank">/cameras/category/:category-name</a><span> (GET)</span>
+                        </li>
+                    </div>
+                </div>
+                <hr class="text-dark">
+                <div class="text-start m-auto col-5">
+                    <div class="m-0">
+                        <h2> Add product</h2>
+                        <div class="pt-2 form-inline">Get product - (only for register user - must send user's auth-token through headers):<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras" target="_blank">/cameras</a><span>
+                        (POST)</span>
+                        </div>
+                        <li class="pt-2 form-inline">company<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">info<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">model<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">sensor<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">resolution<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">price<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">img</li>
+                        <li class="pt-2 form-inline">user_id<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">category_id</li>
+                    </div>
+                </div>
+                <hr class="text-dark">
+                <div class="text-start m-auto col-5">
+                    <div class="m-0">
+                        <h2> Edit product</h2>
+                        <div class="pt-2 form-inline">Get product - (only for register user - must send user's auth-token through headers):<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras" target="_blank">/cameras/:_id (camera)</a><span>
+                      (PUT)</span>
+                        </div>
+                        <li class="pt-2 form-inline">company<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">info<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">model<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">sensor<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">resolution<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">price<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">img</li>
+                        <li class="pt-2 form-inline">user_id<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">category_id</li>
+                    </div>
+                </div>
+                <hr class="text-dark">
+                <div class="text-start m-auto col-5">
+                    <div class="m-0">
+                        <h2> DELETE product</h2>
+                        <div class="pt-2 form-inline">DELETE product - (only for register user - must send user's auth-token through headers):<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras" target="_blank">/cameras/:_id (camera)</a><span>
+                          (DELETE)</span>
+                        </div>
+                        <li class="pt-2 form-inline">company<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">info<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">model<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">sensor<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">resolution<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">price<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">img</li>
+                        <li class="pt-2 form-inline">user_id<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">category_id</li>
+                    </div>
+                </div>
+                <hr class="text-dark">
+                <div class="text-start m-auto col-5">
+                    <div class="m-0">
+                        <h2> Sign Up</h2>
+                        <div class="pt-2 form-inline">Sign Up:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/users">/users</a><span>
+                        (POST)</span>
+                        </div>
+                        <li class="pt-2 form-inline">name<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">email<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">password<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">role</li>
+                    </div>
+                </div>
+                <hr class="text-dark">
+                <div class="text-start m-auto col-5">
+                    <div class="m-0">
+                        <h2> Log in</h2>
+                        <div class="pt-2 form-inline">Login:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/users/login">/users/login</a><span>
+                      (POST)</span>
+                        </div>
+                        <li class="pt-2 form-inline">email<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">password<span class="ps-2"> (required)</span></li>
+                    </div>
+                </div>
+                <hr class="text-dark">
+                <div class="text-start m-auto col-5">
+                    <div class="m-0">
+                        <h2> User's info</h2>
+                        <div class="pt-2 form-inline">Login:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/users/login">/users/myInfo</a><span>
+                    (POST)</span>
+                        </div>
+                        <li class="pt-2 form-inline">email<span class="ps-2"> (required)</span></li>
+                        <li class="pt-2 form-inline">password<span class="ps-2"> (required)</span></li>
+                    </div>
+                </div>
+                <hr class="text-dark">
+            </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+    </main>
+    <footer class="box3">
+
+    </footer>
+
+
+
+</body>
+
+</html>

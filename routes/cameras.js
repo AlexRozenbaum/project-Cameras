@@ -4,7 +4,7 @@ const { CameraModel, validateCamera } = require("../models/cameraModel")
 const router = express.Router();
 
 router.get("/", async(req, res) => {
-    let perPage = req.query.perPage || 5;
+    let perPage = req.query.perPage || 10;
     let page = req.query.page || 1;
 
     try {
