@@ -6,26 +6,24 @@ const router = express.Router();
 router.get("/", async(req, res) => {
     let perPage = req.query.perPage || 10;
     let page = req.query.page || 1;
-
+    let sort = req.query.sort || "_id";
+    let reverse = req.query.reverse == "yes" ? -1 : 1;
     try {
         let data = await CameraModel.find({})
             .limit(perPage)
             .skip((page - 1) * perPage)
-            // .sort({_id:-1}) like -> order by _id DESC
-            .sort({ _id: -1 })
+            .sort({
+                [sort]: reverse
+            })
         res.json(data);
     } catch (err) {
         console.log(err);
         res.status(500).json({ msg: "there error try again later", err })
     }
 })
-
-// /Camera/search?s=
 router.get("/search", async(req, res) => {
     try {
         let queryS = req.query.s;
-        // מביא את החיפוש בתור ביטוי ולא צריך את כל הביטוי עצמו לחיפוש
-        // i -> מבטל את כל מה שקשור ל CASE SENSITVE
         let searchReg = new RegExp(queryS, "i")
         let data = await CameraModel.find({ $or: [{ company: searchReg }, { info: searchReg }] })
             .limit(50)
@@ -37,27 +35,17 @@ router.get("/search", async(req, res) => {
 router.get("/categories/:catName", async(req, res) => {
     let page = req.query.page || 1;
     try {
-        // req.params.catName -> מכיל את הפראמס
         let catName = req.params.catName;
         let data = await CameraModel.find({}).where("category_id").equals(catName).limit(10).skip((page - 1) * 10);
-
         res.json(data);
-        // res.json({msg:"prods cats work",cat:req.params.catName})
     } catch (err) {
         res.status(500).json({ msg: "there error try again later", err })
     }
 })
-
-// לפי מינומום ומקסימום כקוארי סטרינג שיציג מוצרים
-// ?min=
 router.get("/prices", async(req, res) => {
     try {
-        // מגדיר שהמנימום הוא מהקוארי ואם לא מוצא יהיה 0
         let min = req.query.min || 0;
-        // מגדיר שהמקס הוא מהקוארי ואם לא מוצא הוא יהיה אין סופי
         let max = req.query.max || Infinity;
-        // Number() -> casting-> מכריח/מלהק את המשתנה להיות מספר
-        // let temp_ar = prods_ar.filter(item => Number(item.price) >= min)
         let data = await CameraModel.find({});
         let temp_ar = data.filter(item => {
             let price = Number(item.price)
@@ -75,7 +63,6 @@ router.post("/", auth, async(req, res) => {
     }
     try {
         let camera = new CameraModel(req.body);
-        // add the user_id of the user that add the camera
         camera.user_id = req.tokenData._id;
         await camera.save();
         res.status(201).json(camera);
