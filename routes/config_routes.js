@@ -1,9 +1,9 @@
 const indexR = require("./index");
 const usersR = require("./users");
-const camerasR = require("./cameras");
+const cakesR = require("./cakes");
 
 exports.routesInit = (app) => {
-    app.use("/", indexR);
-    app.use("/users", usersR);
-    app.use("/cameras", camerasR)
+  app.use("/",indexR);
+  app.use("/users",usersR);
+  app.use("/cakes",cakesR)
 }
