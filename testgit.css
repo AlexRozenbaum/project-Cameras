@@ -1,0 +1,18 @@
+body{
+  margin:0;
+  font-family: sans-serif;
+  background: navy(163, 4, 4);
+}
+
+.container{
+  background: brown;
+  color:white;
+  max-width:800px;
+  margin:0 auto;
+  padding:8px;
+}
+
+
+h1{
+  color:pink;
+}
