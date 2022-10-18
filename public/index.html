@@ -29,20 +29,20 @@
                     </li>
                     <li class="pt-2 form-inline">Search products by name or info:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras?s=fuji" target="_blank">/cameras?s=key-word</a><span> (GET)</span>
                     </li>
-                    <li class="pt-2 form-inline">Sort products:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras?sort=name" target="_blank">/cameras?sort=sort-key</a><span> (GET)</span>
+                    <li class="pt-2 form-inline">Sort products:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras?sort=company" target="_blank">/cameras?sort=sort-key</a><span> (GET)</span>
                     </li>
-                    <li class="pt-2 form-inline">Reverse by sort key:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras?sort=name&r=yes" target="_blank">/cameras?r=yes</a><span> (GET)</span>
+                    <li class="pt-2 form-inline">Reverse by sort key:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras?sort=company&reverse=yes" target="_blank">/cameras?r=yes</a><span> (GET)</span>
                     </li>
                     <li class="pt-2 form-inline">Price range:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras?min=10&max=10000" target="_blank">/cameras?min=number&max=number</a><span> (GET)</span>
                     </li>
-                    <li class="pt-2 form-inline">Get all products by category:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras/category/cars" target="_blank">/cameras/category/:category-name</a><span> (GET)</span>
+                    <li class="pt-2 form-inline">Get all products by category:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras/category/mirrorless" target="_blank">/cameras/category/:category-name</a><span> (GET)</span>
                     </li>
                 </div>
             </div>
             <hr class="text-dark">
             <div class="text-start m-auto col-5">
                 <div class="m-0">
-                    <h2> Add product</h2>
+                    <h2 class="text-center"> Add product </h2>
                     <div class="pt-2 form-inline">Add product - (only for register user and loggined in users- must send user's auth-token through headers):<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras" target="_blank">/cameras</a><span>
                         (POST)</span>
                     </div>
@@ -60,7 +60,7 @@
             <hr class="text-dark">
             <div class="text-start m-auto col-5">
                 <div class="m-0">
-                    <h2> Edit product</h2>
+                    <h2 class="text-center"> Edit product</h2>
                     <div class="pt-2 form-inline">Get product - (only for register user - must send user's auth-token through headers):<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras" target="_blank">/cameras/:_id (camera)</a><span>
                       (PUT)</span>
                     </div>
@@ -78,7 +78,7 @@
             <hr class="text-dark">
             <div class="text-start m-auto col-5">
                 <div class="m-0">
-                    <h2> DELETE product</h2>
+                    <h2 class="text-center"> DELETE product</h2>
                     <div class="pt-2 form-inline">DELETE product - (only for register user - must send user's auth-token through headers):<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/cameras" target="_blank">/cameras/:_id (camera)</a><span>
                           (DELETE)</span>
                     </div>
@@ -96,7 +96,7 @@
             <hr class="text-dark">
             <div class="text-start m-auto col-5">
                 <div class="m-0">
-                    <h2> Sign Up</h2>
+                    <h2 class="text-center"> Sign Up</h2>
                     <div class="pt-2 form-inline">Sign Up:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/users">/users</a><span>
                         (POST)</span>
                     </div>
@@ -109,7 +109,7 @@
             <hr class="text-dark">
             <div class="text-start m-auto col-5">
                 <div class="m-0">
-                    <h2> Log in</h2>
+                    <h2 class="text-center"> Log in</h2>
                     <div class="pt-2 form-inline">Login:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/users/login">/users/login</a><span>
                       (POST)</span>
                     </div>
@@ -120,9 +120,20 @@
             <hr class="text-dark">
             <div class="text-start m-auto col-5">
                 <div class="m-0">
-                    <h2> User's info</h2>
+                    <h2 class="text-center"> User's info</h2>
                     <div class="pt-2 form-inline">Login:<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/users/myInfo">/users/myInfo</a><span>
-                    (POST)</span>
+                    (GET)</span>
+                    </div>
+                    <li class="pt-2 form-inline">email<span class="ps-2"> (required)</span></li>
+                    <li class="pt-2 form-inline">password<span class="ps-2"> (required)</span></li>
+                </div>
+            </div>
+            <hr class="text-dark">
+            <div class="text-start m-auto col-5">
+                <div class="m-0">
+                    <h2 class="text-center"> User list</h2>
+                    <div class="pt-2 form-inline">Login only with admin user<a class="nav-link ps-1 d-inline-block" href="https://cameras-0jch.onrender.com/users/userslist">/users/userslist</a><span>
+                  (GET)</span>
                     </div>
                     <li class="pt-2 form-inline">email<span class="ps-2"> (required)</span></li>
                     <li class="pt-2 form-inline">password<span class="ps-2"> (required)</span></li>
@@ -134,7 +145,7 @@
     </div>
     </div>
     </main>
-    <footer class="box3">
+    <footer>
     </footer>
 </body>
 
