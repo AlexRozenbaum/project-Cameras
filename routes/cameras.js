@@ -97,8 +97,6 @@ router.delete("/:delId", auth, async(req, res) => {
     try {
         let delId = req.params.delId;
         let data;
-        // אם אדמין יכול למחוק כל רשומה אם לא בודק שהמשתמש
-        // הרשומה היוזר איי די שווה לאיי די של המשתמש
         if (req.tokenData.role == "admin") {
             data = await CameraModel.deleteOne({ _id: delId })
         } else {
